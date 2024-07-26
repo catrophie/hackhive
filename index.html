@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>da app</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="start">
+            <h1>Hey farmer!</h1>
+            <p>Feel the prices you are selling your crops are not matching the hardwork you spend on them?</p>
+            <p>Don't let your suspisions stay unanswered... use our app to find out!</p>
+            <a href="#wrapper"><button>Get Started</button></a>
+        </div>
+        <div id="wrapper">
+            <h1>Search up an item</h1>
+            <p>or you could choose an existing one from your bookmarks</p>
+            <label for="input">You are selling:</label>
+            <input id="input" placeholder="Enter item name"><br>
+            <label for="location">You want to sell it in:</label>
+            <select id="location" oninput="fakeLocation();">
+                <optgroup id="presets">
+                <option id="preset1">Mumbai Market</option>
+                <option id="preset2">bbDaily Warehouse</option>
+                <option id="preset3">Chennai Market</option>
+                </optgroup>
+                <optgroup id="newpresets">
+                    <option id="newpreset">+ add new preset</option>
+                    <option id="custompreset">^ select on map</option>
+                </optgroup>
+            </select>
+            <button id="enter">Go!</button><br><br><br>      
+            <div id="result" hidden>
+                <h3 id="name">Apple</h3>
+                <img id="img" src="img/a/nothing.jpg" alt="nothing">
+                <div id="info">
+                <p id="unit">piece,slice,fruit</p>
+                <h5 id="price">rupees zero</h5>
+                </div>
+            </div>
+            <br>
+            <div id="finalresult" hidden>
+                <h3 id="name2">Final Result</h3>
+                <div id="info">
+                <p id="label">You are selling <b>10kg</b> worth of <b><span id="name1">apples</span></b> to <b><span id="location1">Mumbai market</span></b>.</p>
+                <p id="label2">Travelling there alone with a stock by road would take you:</p>
+                <p><b><span id="cp">0</span> rupees</b> worth of petrol (<b><span id="tp">0</span> litres</b>)</p>
+                <p><b><span id="cd">0</span> rupees</b> worth of diesel (<b><span id="td">0</span> litres</b>)</p>
+                <br>
+                <p>One tip we could give you: if you feel you are getting ripped off, team up with your<br>other local farmers and send all of your produce at once! <a href="part2.html">Click here!</a></p>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

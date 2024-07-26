@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>part 2</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Locate farm-poolers</h1>
+            <p>find farm-poolers nearby or become one!</p><br><br><br><br>
+            <label for="urloc">Your location:</label>
+            <button onclick="getLocation();" id="urloc">Get</button><p id="lr"></p><br>
+            <label for="dloc">General place where you want it delivered:</label><br>
+            <input id="dlocin" placeholder="Enter address... or drop a pin down" /><br><br>
+            <iframe src="map.html" height="200vh" width="500vh" title="map"></iframe><br>
+            <button onclick="findPooler();" id="gocarpool">Find!</button>&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="becomePooler();" id="becarpool">Become one!</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

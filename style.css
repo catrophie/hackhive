@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu';
+    color: #eaeaea;
+    text-align: center;
+    align-items: center;
+    text-shadow: 0px 0px 2vh #000000;
+    overflow: hidden;
+
+    button, input, div#result, div#finalresult, select {
+        background-color: #c5c5c5;
+        border: 0.5vh solid #232323;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    /*select, option, optgroup {
+        color: #000;
+    }*/
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+div#wrapper, div#start{
+    background: url('img/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #414141;
+    height: 100vh;
+    width: 218.5vh;
+
+    h1 {
+        position: inherit;
+        padding-top: 1%;
+        left: 29%;
+        font-size: 10vh;
+        color: #e5e5e5;
+    }
+
+    button#gocarpool, button#becarpool {
+        height: 5.85vh;
+        width: 25vh;
+    }
+
+    button#urloc {
+        height: 5.85vh;
+        width: 9vh;
+    }
+
+    input#dlocin {
+        height: 5.85vh;
+        width: 85vh;
+    }
+
+    p {
+        position: inherit;
+        top: 32%;
+        left: 32%;
+    }
+
+    input#input {
+        position: inherit;
+        top: 40%;
+        left: 25%;
+        height: 5vh;
+        width: 90vh;
+    }
+
+    button#enter {
+        position: inherit;
+        top: 40%;
+        left: 67%;
+        height: 5.85vh;
+        width: 5.85vh;
+    }
+
+    select#location {
+        height: 5.85vh;
+        width: 75vh;
+    }
+
+    div#result {
+        padding: 1vh;
+        position: inherit;
+        top: 50%;
+        margin-left: 25%;
+        background-color: #585858;
+        min-height: 20vh;
+        width: 95vh;
+        align-items: normal;
+        text-align: left;
+
+        h3#name {
+            position: absolute;
+            font-size: 5vh;
+        }
+
+        div#info {
+            position: absolute;
+            margin-top: 8vh;
+            margin-left: 15vh;
+        }
+
+        p#unit, h5#price {
+            position: static;
+            font-size: 3vh;
+        }
+
+        img#img {
+            margin-top: 8vh;
+            margin-left: 1vh;
+            position: absolute;
+            height: 10vh;
+            width: 10vh;
+            background-color: #c5c5c5;
+        }
+    }
+
+    div#finalresult {
+        padding: 1vh;
+        position: inherit;
+        top: 50%;
+        margin-left: 25%;
+        background-color: #585858;
+        min-height: 30vh;
+        width: 95vh;
+        align-items: normal;
+        text-align: left;
+
+        h3#name2 {
+            position: absolute;
+            font-size: 5vh;
+        }
+
+        div#info {
+            position: absolute;
+            margin-top: 8vh;
+            margin-left: 1vh;
+        }
+
+        p {
+            text-align: left;
+            position: static;
+            font-size: 2.5vh;
+        }
+
+        img#img {
+            margin-top: 8vh;
+            margin-left: 1vh;
+            position: absolute;
+            height: 10vh;
+            width: 10vh;
+            background-color: #c5c5c5;
+        }
+    }
+}
+
+div#start {
+    background: url(img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    button {
+        height: 7vh;
+        width: 30vh;
+        font-size: 3vh;
+    }
+}
+
+.disabled {
+    background-color: #000;
+    display: none;
+}

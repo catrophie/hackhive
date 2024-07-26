@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 500px; width: 100%; }
+        #confirmButton { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map;
+        let userMarker;
+        let selectedMarker;
+        let userLocation;
+        let distanceInKm;
+
+        function initMap() {
+            map = L.map('map').setView([51.505, -0.09], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            userMarker = L.marker([51.505, -0.09], { draggable: true }).addTo(map);
+            selectedMarker = null;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    userLocation = [position.coords.latitude, position.coords.longitude];
+                    map.setView(userLocation, 13);
+                    userMarker.setLatLng(userLocation);
+                });
+            }
+
+            map.on('click', (e) => {
+                if (selectedMarker) {
+                    map.removeLayer(selectedMarker);
+                }
+                selectedMarker = L.marker(e.latlng).addTo(map);
+                distanceInKm = (map.distance(userLocation, e.latlng) / 1000).toFixed(2);
+                console.log(`Distance calculated in map.html: ${distanceInKm} km`); // Debug message
+            });
+        }
+
+        function sendDistance() {
+            if (distanceInKm !== undefined) {
+                console.log(`Sending distance: ${distanceInKm} km`); // Debug message
+                window.opener.postMessage({ distance: distanceInKm }, "*");
+                window.close();
+            } else {
+                alert('Please select a location on the map.');
+            }
+        }
+
+        window.onload = initMap;
+
+        document.getElementById('confirmButton').addEventListener('click', sendDistance);
+    </script>
+</body>
+</html>
